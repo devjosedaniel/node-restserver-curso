@@ -3,6 +3,7 @@ require('./config/config')
 const express = require('express');
 // Using Node.js `require()`
 const mongoose = require('mongoose');
+const path = require('path');
 const bodyParser = require('body-parser');
 
 
@@ -11,6 +12,11 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }))
     // convertir a json el body
 app.use(bodyParser.json());
+
+
+
+// Habilitar la carpeta publica
+app.use(express.static(path.resolve(__dirname, '../public')));
 
 // importar y usar las rutas
 // config global de rutas
