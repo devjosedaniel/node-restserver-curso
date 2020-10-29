@@ -13,7 +13,9 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json());
 
 // importar y usar las rutas
-app.use(require('./routes/usuario'));
+// config global de rutas
+app.use(require('./routes/index'));
+
 
 
 
